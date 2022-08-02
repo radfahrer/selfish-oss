@@ -3,6 +3,10 @@
 	<h1>Upload Your Package To Find Issues</h1>
   <p class="tj">If you wish to contribute by resolving issues for open source packages, you can upload your <em class="code">package.json</em> and analize it for a list of issues from your dependencies.</p>
 	<form @submit.prevent="onSubmit" enctype="multipart/form-data">
+   <div v-if="!pat" class="pa3">
+      <label for="pat">Personal Access Token</label>
+      <input class="ml2" type="password" id="pat" name="pat" ref="pat" @change="storePAT"/>
+   </div>
 		<label class="pa4" for="package-upload">
 			Upload <em class="code">package.json</em>
 		</label>
@@ -42,6 +46,14 @@ export default {
 
       /* re-direct */
       this.$router.push('/analize')
+    },
+    storePAT () {
+      localStorage.setItem('pat', this.$refs.pat.value)
+    }
+  },
+  computed: {
+    pat () {
+      return localStorage.getItem('pat')
     }
   },
   mounted () {

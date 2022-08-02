@@ -46,7 +46,7 @@ function parseRepository (data) {
 function fetchIssues ({ owner, repository }) {
   const url = new URL(`https://api.github.com/repos/${owner}/${repository}/issues`)
   url.searchParams.append('per_page', '100')
-  const headers = new Headers({ Accept: 'application/vnd.github+json', Authorization: 'token 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' })
+  const headers = new Headers({ Accept: 'application/vnd.github+json', Authorization: `token ${localStorage.getItem('pat')}` })
   const listIssues = new Request(url, { headers })
   return fetch(listIssues).then(checkResponse)
 }
