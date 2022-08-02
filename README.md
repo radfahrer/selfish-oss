@@ -1,4 +1,5 @@
 # selfish-oss
+Do you want to contribute to Open Source Software, but only if it helps you?
 
 ## Project setup
 ```
@@ -24,6 +25,3 @@ npm run test:unit
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
