@@ -1,7 +1,7 @@
 # selfish-oss
 Do you want to contribute to Open Source Software, but only if it helps you?
 
-## Project setup
+Want to contribute to Open Source Software, but only if it helps you?
 ```
 npm install
 ```
